@@ -36,7 +36,17 @@
 	position: absolute;
 	z-index: 30;
 }
-.location.staBarbara , .location.uk {
+
+.location .weather {
+  margin-top:-1.5em;
+  font-size:2em;
+}
+
+.location:hover .weather {
+  visibility: hidden;
+}
+
+.location.sba , .location.uk {
 	width: 16px;
 	height: 16px;
 	background-color: #ffcd05;
@@ -94,15 +104,15 @@
 	transition: opacity 0.5s;
 }
 
-.location.israel, .arrow.israel {
+.location.tlv, .arrow.tlv {
 	left: 56%;
     top: 36%;
 }
-.location.chile, .arrow.chile {
+.location.lsc, .arrow.lsc {
 	left: 26.5%;
     top: 78%;
 }
-.location.staBarbara, .arrow.staBarbara {
+.location.sba, .arrow.sba {
 	left: 13%;
 	top: 35%;
 }
@@ -110,43 +120,43 @@
 	left: 45.5%;
 	top: 22%;
 }
-.location.china, .arrow.china {
+.location.ngq, .arrow.ngq {
 	left: 68.554%;
 	top: 36.634%;
 }
-.location.hawaii, .arrow.hawaii {
+.location.ogg, .arrow.ogg {
 	left: 3%;
 	top: 47%;
 }
-.location.texas, .arrow.texas {
+.location.elp, .arrow.elp {
 	left: 18%;
 	top: 38%;
 }
-.location.tenerife, .arrow.tenerife {
+.location.tfn, .arrow.tfn {
 	left: 41%;
 	top: 40%;
 }
-.location.southAfrica, .arrow.southAfrica {
+.location.cpt, .arrow.cpt {
 	left: 52.5%;
 	top: 81%;
 }
-.location.australia, .arrow.australia {
+.location.coj, .arrow.coj {
 	left: 88%;
 	top: 81%;
 }
-.location.israel .infoBox {
+.location.tlv .infoBox {
 	width: 13.286em;
 	margin-left: -5.996em;
 	margin-top: -11em;
 }
-.location.chile .infoBox {
+.location.lsc .infoBox {
 	width: 22.1em;
 	margin-left: -18.812em;
 	margin-top: -4.409em;
 	/*-webkit-transition: margin-left 0.5s;
 	transition: margin-left 0.5s;*/
 }
-.location.staBarbara .infoBox {
+.location.sba .infoBox {
 	width: 15em;
 	margin-left: -6.231em;
 	margin-top: -8.818em;
@@ -160,34 +170,34 @@
   background-color: #ffcd05;
   border:none;
 }
-.location.china .infoBox {
+.location.ngq .infoBox {
 	width: 13.932em;
 	margin-left: 0em;
 	margin-top: -6.9em;
 }
-.location.hawaii .infoBox {
+.location.ogg .infoBox {
 	width: 15.108em;
 	margin-left: 0em;
 	margin-top: 2.941em;
 }
-.location.texas .infoBox {
+.location.elp .infoBox {
 	width: 15.343em;
 	margin-left: -8.235em;
 	margin-top: 3.117em;
 }
-.location.tenerife .infoBox {
+.location.tfn .infoBox {
 	width: 14.168em;
 	margin-left: -15.235em;
 	margin-top: -2.882em;
 	/*-webkit-transition: margin-left 0.5s;
 	transition: margin-left 0.5s;*/
 }
-.location.southAfrica .infoBox {
+.location.cpt .infoBox {
 	width: 19em;
 	margin-left: -7.3em;
 	margin-top: -14.235em;
 }
-.location.australia .infoBox {
+.location.coj .infoBox {
 	width: 22em;
 	margin-left: -19.647em;
 	margin-top: -6.294em;
@@ -200,7 +210,7 @@
     .location .infoBox {
         font-size: 16px;
     }
-    .location.tenerife .infoBox {
+    .location.tfn .infoBox {
 		margin-left: -14.235em;
 	}
 
@@ -211,16 +221,16 @@
     .location .infoBox {
         font-size: 15px;
     }
-    .location.chile .infoBox {
+    .location.lsc .infoBox {
   		margin-left: -16.812em;
       margin-top: -12em;
     }
-    .location.australia .infoBox {
+    .location.coj .infoBox {
   		margin-left: -17.8em;
       margin-top: -12em;
     }
 
-	.location.texas .infoBox {
+	.location.elp .infoBox {
 		margin-left: -9.35em;
     	margin-top: 2.3em;
 		/*-webkit-transition: margin-left 0.5s,  margin-top 0.5s;
@@ -257,12 +267,12 @@
     .location .infoBox {
         font-size: 12px;
     }
-	.location.hawaii .infoBox {
+	.location.ogg .infoBox {
 		margin-left: 0em;
 	}
 }
 @media screen and (max-device-width : 1045px), screen and (max-width: 1045px) {
-	.location.hawaii .infoBox {
+	.location.ogg .infoBox {
 		margin-left: 0em;
 	}
     .worldMap .mapText {

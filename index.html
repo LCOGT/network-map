@@ -7,6 +7,7 @@
   <title>Las Cumbres Observatory Global Telescope Network</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Libre+Franklin:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href='map.css' />
+  <script src="https://kit.fontawesome.com/a6b928a86b.js" crossorigin="anonymous"></script>
   <style>
 html,body { height: 100%; }
 body {
@@ -24,11 +25,13 @@ body {
   <div id="map"></div>
   <div class="aspect-ratio-box">
   <div class="worldMap">
-    <div class="mapText">
+    <div class="mapText" style="visibility:hidden;">
       Las Cumbres Observatory<br/>
       Global Telescope Network
     </div>
-    <div class="location israel" data-location="israel">
+    <div class="location tlv" data-location="tlv">
+    <div class="weather">
+    </div>
     <div class="infoBox">
       <div class="telescopes">
         <img src="/imgs/1m0.png" class="t1m0" />
@@ -40,7 +43,9 @@ body {
       </div>
     </div>
     </div>
-    <div class="location chile" data-location="chile">
+    <div class="location lsc" data-location="lsc">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/1m0.png" class="t1m0" />
@@ -57,14 +62,13 @@ body {
         </div>
       </div>
     </div>
-    <div class="location staBarbara" data-location="staBarbara">
+    <div class="location sba" data-location="sba">
       <div class="infoBox">
         <p class="info-header">Goleta</p>
         <p>California</p>
         <p>International Headquarters and Data Center</p>
       </div>
     </div>
-    <div class="arrow staBarbara" data-location="staBarbara" data-direction="up"></div>
     <div class="location uk" data-location="uk">
       <div class="infoBox">
           <p class="info-header">United Kingdom</p>
@@ -72,7 +76,9 @@ body {
           <p><em>Cardiff</em> - Education Headquarters</p>
       </div>
     </div>
-    <div class="location china" data-location="china">
+    <div class="location ngq" data-location="ngq">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="content">
           <p class="info-header">Ali Observatory</p>
@@ -81,7 +87,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="location hawaii" data-location="hawaii">
+    <div class="location ogg" data-location="ogg">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/2m0.png" class="t2m0" />
@@ -96,7 +104,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="location texas" data-location="texas">
+    <div class="location elp" data-location="elp">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/1m0.png" class="t1m0" />
@@ -111,7 +121,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="location tenerife" data-location="tenerife">
+    <div class="location tfn" data-location="tfn">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/0m4.png" class="t0m4" />
@@ -124,7 +136,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="location southAfrica" data-location="southAfrica">
+    <div class="location cpt" data-location="cpt">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/1m0.png" class="t1m0" />
@@ -140,7 +154,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="location australia" data-location="australia">
+    <div class="location coj" data-location="coj">
+      <div class="weather">
+      </div>
       <div class="infoBox">
         <div class="telescopes">
           <img src="/imgs/2m0.png" class="t2m0" />
@@ -160,16 +176,132 @@ body {
     </div>
   </div>
   </div>
+  <script type="module" src="suncalc.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     var urlParams = new URLSearchParams(window.location.search);
+    var maptext = document.querySelector('.mapText');
     if (urlParams.get('light') != null){
       var elem = document.querySelector('.aspect-ratio-box');
       elem.style.backgroundImage = "url('imgs/networkmap-white-01.svg')";
     }
     if (urlParams.get('noident') != null){
-      var elem = document.querySelector('.mapText');
-      elem.innerText = "";
+      maptext.style.visibility = "hidden";
+    } else {
+      maptext.style.visibility = "visible";
     }
+
+  var sitecodes  = {
+    'elp': {
+      "weather": {
+			  "current": "NOT_OK_TO_OPEN",
+  			"day": false,
+      },
+      "lat": 30.679,
+      "lng": -104.015,
+		},
+    'tfn': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": 28.30,
+      "lng": -16.511,
+    },
+    'cpt': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": -32.380,
+      "lng": 20.81,
+    },
+    'tlv': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": 28.30,
+  		"lng": -16.511,
+    },
+    'coj': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": -31.272,
+      "lng": 149.07,
+    },
+    'ogg': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": 20.706,
+      "lng": -156.258,
+    },
+    'lsc': {
+      "weather": {
+        "current": "NOT_OK_TO_OPEN",
+        "day": false,
+      },
+      "lat": -30.167,
+      "lng": -70.804,
+    },
+  }
+
+  async function weather() {
+    var tmparr = sitecodes;
+    var now = new Date();
+    var end = now.toISOString();
+    now.setDate(now.getDate()-1);
+    var start = now.toISOString();
+    for (var site in sitecodes){
+      var position = SunCalc.getPosition(now, sitecodes[site]['lat'], sitecodes[site]['lng']);
+      tmparr[site]['weather']['day'] = (position.altitude < 0) ? false : true;
+      state = await checkWeather(site, start, end);
+      tmparr[site]['weather']['current'] =  state['state'];
+    }
+    updateWeatherIcons(tmparr)
+
+  }
+  function checkWeather(site,start,end) {
+    return axios.get('https://weather-api.lco.global/query?site='+site+'&datumname=Weather%20Ok%20To%20Open&agg=False&start='+start+'&end='+end)
+      .then(response => response.data)
+      .then(json => {
+        if (json!=null){
+          var state = json[json.length-1]['ValueString']=='true' ? true : false;
+        }else{
+          var state = false;
+        }
+        return {'state':state, 'site':site}
+    });
+  }
+  function updateWeatherIcons(sites){
+    for (var site in sites){
+      var elem = document.querySelector('.'+site+' .weather');
+      if (sites[site]['weather']['day'] == true  && sites[site]['weather']['current'] == true ){
+        elem.innerHTML = '<i class="fas fa-sun"></i></span>';
+      } else if (sites[site]['weather']['day'] == true && sites[site]['weather']['current'] == false){
+        elem.innerHTML = '<i class="fad fa-clouds-sun"></i></span>';
+      } else if (sites[site]['weather']['day'] == false && sites[site]['weather']['current'] == true){
+        elem.innerHTML = '<i class="fas fa-stars"></i>';
+      } else if (sites[site]['weather']['day'] == false && sites[site]['weather']['current'] == false){
+        elem.innerHTML = '<i class="fas fa-clouds"></i>';
+      } else {
+        console.log('Error with '+site+" "+sites[site]['weather']['day']+" "+sites[site]['weather']['current']);
+      }
+    }
+  }
+
+  if (urlParams.get('weather') != null){
+    console.log('weather set')
+    var timer = setInterval(function(){
+          Promise.all([weather()])
+        },2000);
+  } else {
+    console.log('weather not set')
+  }
   </script>
 </body>
 
