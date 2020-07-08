@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Las Cumbres Observatory Global Telescope Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Libre+Franklin:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href='map.css' />
+  <style>
+html,body { height: 100%; }
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family:"Libre Franklin",Arial,sans-serif;
+}
+</style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <div class="aspect-ratio-box">
+  <div class="worldMap">
+    <div class="mapText">
+      Las Cumbres Observatory<br/>
+      Global Telescope Network
+    </div>
+    <div class="location israel" data-location="israel">
+    <div class="infoBox">
+      <div class="telescopes">
+        <img src="/imgs/1m0.png" class="t1m0" />
+      </div>
+      <div class="content">
+        <p class="info-header">Wise Observatory</p>
+        <p>South District, Israel</p>
+        <p>1 x 1-meter (NRES only)</p>
+      </div>
+    </div>
+    </div>
+    <div class="location chile" data-location="chile">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">Cerro Tololo Observatory</p>
+          <p>District IV, Chile</p>
+          <p>3 x 1-meters</p>
+          <p>2 x 0.4-meters</p>
+        </div>
+      </div>
+    </div>
+    <div class="location staBarbara" data-location="staBarbara">
+      <div class="infoBox">
+        <p class="info-header">Goleta</p>
+        <p>California</p>
+        <p>International Headquarters and Data Center</p>
+      </div>
+    </div>
+    <div class="arrow staBarbara" data-location="staBarbara" data-direction="up"></div>
+    <div class="location uk" data-location="uk">
+      <div class="infoBox">
+          <p class="info-header">United Kingdom</p>
+          <p><em>Chester</em> - European Operations Center</p>
+          <p><em>Cardiff</em> - Education Headquarters</p>
+      </div>
+    </div>
+    <div class="location china" data-location="china">
+      <div class="infoBox">
+        <div class="content">
+          <p class="info-header">Ali Observatory</p>
+          <p>Western Tibet, China</p>
+          <p>Site under development</p>
+        </div>
+      </div>
+    </div>
+    <div class="location hawaii" data-location="hawaii">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/2m0.png" class="t2m0" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">Haleakala Observatory</p>
+          <p>Maui, Hawaii</p>
+          <p>1 x 2-meter</p>
+          <p>2 x 0.4-meters</p>
+        </div>
+      </div>
+    </div>
+    <div class="location texas" data-location="texas">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">McDonald Observatory</p>
+          <p>Fort Davis, Texas</p>
+          <p>2 x 1-meters</p>
+          <p>1 x 0.4-meters</p>
+        </div>
+      </div>
+    </div>
+    <div class="location tenerife" data-location="tenerife">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/0m4.png" class="t0m4" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">Teide Observatory</p>
+          <p>Tenerife, Canary Islands, Spain</p>
+          <p>2 x 0.4-meters</p>
+        </div>
+      </div>
+    </div>
+    <div class="location southAfrica" data-location="southAfrica">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">South African Astronomical Observatory</p>
+          <p>Sutherland, South Africa</p>
+          <p>3 x 1-meters</p>
+          <p>1 x 0.4-meter</p>
+        </div>
+      </div>
+    </div>
+    <div class="location australia" data-location="australia">
+      <div class="infoBox">
+        <div class="telescopes">
+          <img src="/imgs/2m0.png" class="t2m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/1m0.png" class="t1m0" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+          <img src="/imgs/0m4.png" class="t0m4" />
+        </div>
+        <div class="content">
+          <p class="info-header">Siding Spring Observatory</p>
+          <p>New South Wales, Australia</p>
+          <p>1 x 2-meter</p>
+          <p>2 x 1-meters</p>
+          <p>2 x 0.4-meters</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('light') != null){
+      var elem = document.querySelector('.aspect-ratio-box');
+      elem.style.backgroundImage = "url('imgs/networkmap-white-01.svg')";
+    }
+    if (urlParams.get('noident') != null){
+      var elem = document.querySelector('.mapText');
+      elem.innerText = "";
+    }
+  </script>
+</body>
+
+</html>
