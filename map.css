@@ -96,7 +96,7 @@
 .location:hover {
 	z-index: 50;
 }
-.location:hover .infoBox, .location.shown .infoBox, .arrow.shown {
+.location:hover .infoBox, .location.shown .infoBoxwn {
 	display: block;
 	visibility: visible;
 	opacity: 1;
@@ -104,43 +104,43 @@
 	transition: opacity 0.5s;
 }
 
-.location.tlv, .arrow.tlv {
+.location.tlv {
 	left: 56%;
     top: 36%;
 }
-.location.lsc, .arrow.lsc {
+.location.lsc {
 	left: 26.5%;
     top: 78%;
 }
-.location.sba, .arrow.sba {
+.location.sba {
 	left: 13%;
 	top: 35%;
 }
-.location.uk, .arrow.uk {
+.location.uk{
 	left: 45.5%;
 	top: 22%;
 }
-.location.ngq, .arrow.ngq {
+.location.ngq {
 	left: 68.554%;
 	top: 36.634%;
 }
-.location.ogg, .arrow.ogg {
+.location.ogg {
 	left: 3%;
 	top: 47%;
 }
-.location.elp, .arrow.elp {
+.location.elp {
 	left: 18%;
 	top: 38%;
 }
-.location.tfn, .arrow.tfn {
+.location.tfn {
 	left: 41%;
 	top: 40%;
 }
-.location.cpt, .arrow.cpt {
+.location.cpt {
 	left: 52.5%;
 	top: 81%;
 }
-.location.coj, .arrow.coj {
+.location.coj {
 	left: 88%;
 	top: 81%;
 }
@@ -186,11 +186,9 @@
 	margin-top: 3.117em;
 }
 .location.tfn .infoBox {
-	width: 14.168em;
+	width: 17em;
 	margin-left: -15.235em;
 	margin-top: -2.882em;
-	/*-webkit-transition: margin-left 0.5s;
-	transition: margin-left 0.5s;*/
 }
 .location.cpt .infoBox {
 	width: 19em;
@@ -201,8 +199,6 @@
 	width: 22em;
 	margin-left: -19.647em;
 	margin-top: -6.294em;
-	/*-webkit-transition: margin-left 0.5s;
-	transition: margin-left 0.5s;*/
 }
 
 
@@ -233,8 +229,6 @@
 	.location.elp .infoBox {
 		margin-left: -9.35em;
     	margin-top: 2.3em;
-		/*-webkit-transition: margin-left 0.5s,  margin-top 0.5s;
-		transition: margin-left 0.5s, margin-top 0.5s;*/
 	}
 
 }
