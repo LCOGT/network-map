@@ -5,7 +5,7 @@
   overflow: hidden;
   padding-top: calc(926 / 1920 * 100%);
   position: relative;
-  background: url('imgs/networkmap-lightgrey.svg') no-repeat;
+  background: url('../imgs/networkmap-lightgrey.svg') no-repeat;
 }
 
 .worldMap {
